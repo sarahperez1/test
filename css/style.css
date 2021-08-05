@@ -10,7 +10,7 @@ body,html {
 
 body {
 	display: grid;
-	grid-template-rows: 80px 1fr 50px;
+	grid-template-rows: 70px 1fr 40px;
 	grid-template-columns: 300px 1fr;
 	grid-template-areas: 
 	"header header"
@@ -33,5 +33,13 @@ body {
 .footer {
 	grid-area: footer;
 	padding:10px;
-	background-color: rgb(175, 175, 175);
+	background-color: rgb(91, 154, 248);
+	color: white;
+}
+
+.sidebar-item {
+    padding: 10px; /* adds inner padding */
+    background: gainsboro; /* background color */
+    border: 1px solid gray; /* border width, style, and color */
+    margin: 4px; /* outer padding */
 }
