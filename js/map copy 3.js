@@ -2,19 +2,19 @@
 let map;
 
 // path to csv data
-let path = "data/watersystems.csv";
+let path = "data/WaterSystems.csv";
 let markers = L.featureGroup();
 
 
 // initialize
 $( document ).ready(function() {
     createMap();
-	readCSV();
+	readCSV(path);
 });
 
 // create the map
 function createMap(){
-	map = L.map('map').setView([0,0],3);
+	map = L.map('map').setView([34.05,-118.115],10);
 
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -38,20 +38,11 @@ function readCSV(){
 
 // function to map csv data
 function mapCSV(data){
-
-	// circle options
-	let circleOptions = {
-		radius: 5,
-		weight: 1,
-		color: 'white',
-		fillColor: 'dodgerblue',
-		fillOpacity: 1
-	}
-
+	
 	// loop through each entry
-	data.data.forEach(function(item,index){
-		// create a marker
-		let marker = L.circleMarker([item.latitude,item.longitude],circleOptions)
+	data.data.forEach(function(item,ws){
+		// create marker
+		let marker = L.marker([item.Latitude,item.Longitude])
 
 		// add marker to featuregroup
 		markers.addLayer(marker)
@@ -60,6 +51,8 @@ function mapCSV(data){
 	// add featuregroup to map
 	markers.addTo(map)
 
-	// fit map to markers
+	// fit markers to map
 	map.fitBounds(markers.getBounds())
 }
+
+
