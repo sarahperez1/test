@@ -1,0 +1,34 @@
+body,html {
+	margin:0;
+	height:100%;
+	width:100%;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 70px 1fr 40px;
+	grid-template-columns: 300px 1fr;
+	grid-template-areas: 
+	"header header"
+	"sidebar content"
+	"footer footer";
+}
+
+.header {
+	grid-area: header;
+	padding:10px;
+	background-color: rgb(91, 154, 248);
+	color: white;
+	font-size: 2em;
+}
+
+.content {
+	grid-area: content;
+}
+
+.footer {
+	grid-area: footer;
+	padding:10px;
+	background-color: rgb(91, 154, 248);
+	color: white;
+}
